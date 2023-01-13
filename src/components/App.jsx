@@ -1,4 +1,3 @@
-import Wrapper from './Wrapper/Wrapper.styled';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from 'pages/Home';
