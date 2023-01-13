@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import * as mockAPI from 'components/service/mockAPI';
+import * as mockAPI from 'components/service/SwaggerAPI';
 
 export const fetchOperation = createAsyncThunk(
   'contacts/fetchContacts',
