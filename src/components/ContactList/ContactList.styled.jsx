@@ -8,6 +8,7 @@ const StyledList = styled.ul`
   font-weight: 500;
   padding: 15px 20px;
   background-color: #6ed0f6;
+  text-align: center;
 
   li {
     font-family: 'Comfortaa', cursive;

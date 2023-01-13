@@ -19,15 +19,21 @@ import StartMessage from 'components/StartMessage/StartMessage';
 
 export function Home() {
   const contacts = useSelector(state => state.contacts.items);
+  const token = useSelector(state => state.users.token);
   const filter = useSelector(state => state.filter.filter);
-  const isLogin = useSelector(state => state.users.user.isLoggedIn);
+  const isLogin = useSelector(state => state.users.isLoggedIn);
+
+  // console.log(isLogin);
   // console.log(useSelector(state => state));
   // console.log(contacts);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (!token) {
+      return;
+    }
     dispatch(fetchOperation());
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   const handelSubmit = e => {
     e.preventDefault();
@@ -37,12 +43,12 @@ export function Home() {
       contact.name.toLowerCase().includes(newName.toLowerCase())
     );
     const findeNumber = contacts.some(contact =>
-      contact.phone.trim().includes(newNumber.trim())
+      contact.number.trim().includes(newNumber.trim())
     );
 
     const newContact = {
       name: newName,
-      phone: newNumber,
+      number: newNumber,
     };
     if (!findeName && !findeNumber) {
       dispatch(postOperation(newContact));
