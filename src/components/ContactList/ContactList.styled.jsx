@@ -9,6 +9,7 @@ const StyledList = styled.ul`
   padding: 15px 20px;
   background-color: #6ed0f6;
   text-align: center;
+  margin-left: -68px;
 
   li {
     font-family: 'Comfortaa', cursive;

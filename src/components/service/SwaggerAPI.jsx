@@ -1,13 +1,14 @@
 import axios from 'axios';
-let token;
+
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 // axios.defaults.headers.common['Authorization'] = token;
+let token;
 
 export async function register(user) {
   try {
     const response = await axios.post('/users/signup', user);
-    console.log(response.data);
     token = response.data.token;
+    // console.log(response.data);
     return response.data;
   } catch (error) {
     alert('Registration failed');
@@ -18,7 +19,7 @@ export async function login(user) {
   try {
     const response = await axios.post('/users/login', user);
     token = response.data.token;
-    console.log(response);
+    // console.log(response);
     return response.data;
   } catch (error) {
     alert('Login failed, please try again');

@@ -3,7 +3,7 @@ import {
   deleteOperation,
   fetchOperation,
   postOperation,
-} from './operations/contactsOperations';
+} from './contactsOperations';
 
 const initial = {
   items: [],

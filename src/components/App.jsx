@@ -4,6 +4,7 @@ import { Home } from 'pages/Home';
 import AppBar from './AppBar/AppBar';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
+import PublicRoute from './UserMenu/PublicRoute';
 
 export function App() {
   return (
@@ -12,8 +13,14 @@ export function App() {
       <Suspense fallback={<div>Wait a minute...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={<PublicRoute component={<Login />} />}
+          />
+          <Route
+            path="/register"
+            element={<PublicRoute path="/register" component={<Register />} />}
+          />
           <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>

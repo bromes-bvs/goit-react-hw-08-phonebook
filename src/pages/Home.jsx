@@ -4,7 +4,7 @@ import {
   deleteOperation,
   fetchOperation,
   postOperation,
-} from 'redux/contacts/operations/contactsOperations';
+} from 'redux/contacts/contactsOperations';
 import { useEffect } from 'react';
 import Wrapper from 'components/Wrapper/Wrapper.styled';
 import {

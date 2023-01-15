@@ -1,6 +1,6 @@
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logoutOperation } from 'redux/auth/authOperations';
-import defaultAvatar from './batman2.jpg';
+import defaultAvatar from './batman.jpg';
 import { MenuBox, PhonebookLink } from './UserMenu.styled';
 
 export default function UserMenu({ user }) {
